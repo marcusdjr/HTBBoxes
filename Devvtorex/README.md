@@ -102,3 +102,30 @@ Lets upgrade our current shell so that we can interact with MySQL properly
 Now lets use the credentials we discovered previously to connect to the local db
 
     mysql -u lewis -p
+
+Lets do 
+    show databases;
+
+to see what databases we have in our hands.
+
+![image](https://github.com/marccrittersec/HackTheBox/assets/31329300/f5e817fe-5c1b-433f-a225-a430542d1c68)
+
+The Joomla DB seems be the only db that is not default.
+
+    use joomla
+    show tables;
+
+We get tons of tables back but we are looking for credentials so lets look into the "sd4fg_users" table.
+
+    select * from sd4fg_users;
+
+Here we see a password hash for user logan, lets feed the hash to hashid.
+
+Here is what we get:
+
+![image](https://github.com/marccrittersec/HackTheBox/assets/31329300/ddbbdf91-35f8-4b84-b9d8-9c112b29d871)
+
+
+now that we know its using bcrypt lets try and CRACK THE HASH!
+
+    hashcat -m 3200 hash /user/share/wordlist/rockyou.txt
