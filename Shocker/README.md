@@ -27,4 +27,27 @@ When we go to /user.sh, it seems to download a file. If we run burpsuit and look
 
 ![image](https://github.com/marcusdjr/disney/assets/31329300/cc59f9d8-ff14-4c85-95c3-e21f5b89b210)
 
-This 
+This box is called shocker 🤔, so lets try to see if its vulnerable to shell shock.
+
+There we go it does seems to be vulnerabnle to Shell Shock.
+
+![image](https://github.com/marcusdjr/disney/assets/31329300/fb2c8f9d-c489-488c-8b29-bf2286b2c428)
+
+Before we proceed lets see discuss what Shell Shock even is.
+
+    Shellshock or Bash vulnerability was discovered in 2014. Upon its discovery, Shellshock posed a serious threat to the security of many systems worldwide.
+
+    It affected Bash versions 1.0.3 through 4.3. Patches and updates were quickly released by operating system vendors and software developers to address the vulnerability.
+
+    But many systems were still vulnerable at the time of the disclosure.
+
+    As a result, the Shellshock vulnerability was widely exploited by attackers, and it is estimated that millions of systems were compromised.
+
+How can it be exploited?
+    Shellshock can be exploited in the following ways:
+
+    An attacker can send a specially crafted environment variable to a Bash-based application. This environment variable will contain a function definition that will be executed by Bash (Bash is a Command language interpreter). The function definition can contain any arbitrary command, which will be executed with the privileges of the user running the Bash-based application.
+
+    An attacker can create a malicious web page that contains a specially crafted environment variable. When a user visits the web page, the environment variable will be sent to the web server, which will then execute the arbitrary command.
+
+    An attacker can send a specially crafted email message that contains a specially crafted environment variable. When the user opens the email message, the environment variable will be sent to the email client, which will then execute the arbitrary command.
