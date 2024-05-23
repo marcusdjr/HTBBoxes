@@ -62,7 +62,7 @@ Lets try to get a sweet Reverse Shell
 
 We got it!!
 
-![image](https://github.com/marcusdjr/disney/assets/31329300/4ea4b49c-6bf1-47fd-9b94-6835915764fa)
+![image](https://github.com/marcusdjr/disney/assets/31329300/d347114f-2472-4599-92a4-c822f60c5129)
 
 Lets upgrade our shell..
 
