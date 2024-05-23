@@ -1,5 +1,7 @@
 # Shocker 😲
 
+![DALL·E 2024-05-23 15 43 09 - A digital artwork of a hacker in a dark room, lit only by the glow of multiple computer screens showing code  The hacker, a middle-aged Caucasian male](https://github.com/marcusdjr/disney/assets/31329300/c7f7c23a-42c0-4d70-a048-6f2d495bcc43)
+
 Lets begin with an NMAP scan to see what ports we see open.
 
     nmap -sC -sV 10.10.10.56
