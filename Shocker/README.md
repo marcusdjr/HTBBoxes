@@ -22,3 +22,9 @@ Lets to use gobuster on  http://10.10.10.56cgin-bin/
 Aha! /user.sh
 
 ![image](https://github.com/marcusdjr/disney/assets/31329300/1cb4233c-aa06-4b42-bfe3-3696fde11825)
+
+When we go to /user.sh, it seems to download a file. If we run burpsuit and look at our request and responses we see the reason why is because it sees "Content-Type: text/x-sh" and doesnt know what to do with it so it just saves it as a file.
+
+![image](https://github.com/marcusdjr/disney/assets/31329300/cc59f9d8-ff14-4c85-95c3-e21f5b89b210)
+
+This 
