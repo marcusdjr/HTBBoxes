@@ -33,7 +33,7 @@ There we go it does seems to be vulnerabnle to Shell Shock.
 
 ![image](https://github.com/marcusdjr/disney/assets/31329300/fb2c8f9d-c489-488c-8b29-bf2286b2c428)
 
-Before we proceed lets see discuss what Shell Shock even is.
+Before we proceed lets discuss what Shell Shock even is.
 
     Shellshock or Bash vulnerability was discovered in 2014. Upon its discovery, Shellshock posed a serious threat to the security of many systems worldwide.
 
@@ -51,3 +51,11 @@ How can it be exploited?
     An attacker can create a malicious web page that contains a specially crafted environment variable. When a user visits the web page, the environment variable will be sent to the web server, which will then execute the arbitrary command.
 
     An attacker can send a specially crafted email message that contains a specially crafted environment variable. When the user opens the email message, the environment variable will be sent to the email client, which will then execute the arbitrary command.
+
+If we go back to burp and send the GET request to Repeater and then modify the Cookie and replace it with a command such as ls, we see that we get a response 😲
+
+![image](https://github.com/marcusdjr/disney/assets/31329300/ba981370-1f79-4b03-8916-ce6304fca816)
+
+It seems as though we cannot modify we can't run ls without specifying the path first, lets fix that so that we can execute commands freely.
+
+Lets go back to the Nmap script,
