@@ -56,6 +56,17 @@ If we go back to burp and send the GET request to Repeater and then modify the C
 
 ![image](https://github.com/marcusdjr/disney/assets/31329300/ba981370-1f79-4b03-8916-ce6304fca816)
 
-It seems as though we cannot modify we can't run ls without specifying the path first, lets fix that so that we can execute commands freely.
+It seems as though we cannot run ls without specifying the path first, lets fix that so that we can execute commands freely.
 
 Lets go back to the Nmap script,
+
+
+
+Before: 
+
+![image](https://github.com/marcusdjr/disney/assets/31329300/fa54f05a-a97d-465c-bf07-d5d54305ee2a)
+
+After:
+
+![image](https://github.com/marcusdjr/disney/assets/31329300/4c641234-6976-4bdd-940a-c3c89386f4cb)
+
