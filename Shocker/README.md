@@ -58,17 +58,29 @@ If we go back to burp and send the GET request to Repeater and then modify the C
 
 ![image](https://github.com/marcusdjr/disney/assets/31329300/ba981370-1f79-4b03-8916-ce6304fca816)
 
-It seems as though we cannot run ls without specifying the path first, lets fix that so that we can execute commands freely.
+Lets try to get a sweet Reverse Shell
 
-Lets go back to the Nmap script,
+We got it!!
+
+![image](https://github.com/marcusdjr/disney/assets/31329300/4ea4b49c-6bf1-47fd-9b94-6835915764fa)
+
+Lets upgrade our shell..
+
+Thats better!
+
+![image](https://github.com/marcusdjr/disney/assets/31329300/83aaeafe-7a5b-47ef-8e17-6b7af1c3caa6)
+
+Now lets try to get root.
+
+    sudo perl -e 'exec "/bin/bash";'
+
+We got root!
+
+![image](https://github.com/marcusdjr/disney/assets/31329300/3241b033-307b-4ebf-af60-3b3b1b708d0e)
 
 
+Now lets locate that flag,
 
-Before: 
+![image](https://github.com/marcusdjr/disney/assets/31329300/b403006b-2546-4403-b168-e353cc3e2aaf)
 
-![image](https://github.com/marcusdjr/disney/assets/31329300/fa54f05a-a97d-465c-bf07-d5d54305ee2a)
-
-After:
-
-![image](https://github.com/marcusdjr/disney/assets/31329300/4c641234-6976-4bdd-940a-c3c89386f4cb)
-
+Boom! and thats Shocker
