@@ -32,3 +32,4 @@ Oh wow! A terminal..
 
 ![image](https://github.com/marcusdjr/HTBBoxes/assets/31329300/32b091dd-4f2c-4d1d-8954-2dd0c1e83f6e)
 
+Now we do some priv esc and get that flag!
